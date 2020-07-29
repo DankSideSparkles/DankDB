@@ -13,12 +13,11 @@ class Database():
 		self.c = self.conn.cursor()
 
 		self.table_name = ""
-		self.DB = False
 
 		print("Database initialized...")
 
 	def create_table(self, table_name, *args, **kwargs):
-		"""This function will take a table name and mutliple row names then create a table"""
+		"""This function will take a table name and mutliple column names then create a table"""
 		self.table_name = table_name
 
 		string = ["("]
@@ -52,15 +51,14 @@ class Database():
 		command = f"INSERT INTO {self.table_name} VALUES {string}"
 		self.c.execute(command, args)
 		self.conn.commit()
-		self.DB = True
 		print("Values added...")
 
-	def delete_row(self, row_name):
-		"""This function will remove a row with a given name"""
-		command = f"DELETE FROM {self.table_name} WHERE {row_name}"
+	def delete_rows(self):
+		"""This function will remove all rows from db"""
+		command = f"DELETE FROM {self.table_name}"
 		self.c.execute(command)
 		self.conn.commit()
-		print("Row removed...")
+		print("All rows removed...")
 
 	def fetch_table(self):
 		"""This function will retrieve all values from the table"""
