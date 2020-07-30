@@ -2,5 +2,5 @@
 /dankdb.egg-info
 /dist
 /test
-
 /docs/_build
+/dankdb/__pycache__
