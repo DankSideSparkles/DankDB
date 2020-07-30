@@ -10,7 +10,7 @@ README = (HERE / "README.md").read_text()
 # This call to setup() does all the work
 setup(
 	name="dankdb",
-	version="v0.0.2",
+	version="v0.0.3",
 	description="Easy to use database module",
 	long_description=README,
 	long_description_content_type="text/markdown",

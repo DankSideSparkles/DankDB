@@ -4,8 +4,20 @@
 [![](https://img.shields.io/github/v/tag/DankSideSparkles/DankDB?style=plastic)](https://github.com/DankSideSparkles/DankDB/releases)
 [![](https://img.shields.io/github/issues/DankSideSparkles/DankDB?style=plastic)](https://github.com/DankSideSparkles/DankDB/issues)
 
-This database module will allow you to create simple databases for small scale projects. Can easily add values to the database and retrieve them.
- 
+This simple, yet useful module allows the user to create a database for small scale projects; the user can easily add values to the database while simultaneously retrieving values. 
+
+
+## Features:
+
+•    create_table - Takes in a table name and multiple column names then creates a table.
+•    insert_row - Takes in a row of values and adds them into the table.
+•    delete_rows - Removes all rows from table.
+•    fetch_table - Retrieves all values within the table.
+•    export_csv - Export table into a csv file with given table name.
+•    read_csv - Prints out all values in table with given table name.
+•    close - Closes connection to database.
+
+
 ## How to install
 
 `pip install dankdb`
@@ -27,3 +39,8 @@ print(db.fetch_table())
 
 db.close()
 ```
+
+
+## Feature request
+
+If there is a feature that you would like implemented, open an issue, and I will work on it.

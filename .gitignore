@@ -2,3 +2,5 @@
 /dankdb.egg-info
 /dist
 /test
+
+/doc/_build

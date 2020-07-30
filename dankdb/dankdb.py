@@ -21,7 +21,7 @@ class Database():
 		print("Database initialized...\n")
 
 	def create_table(self, table_name, *args, **kwargs):
-		"""This function will take a table name and mutliple column names then create a table"""
+		"""Takes in a table name and multiple column names then creates a table"""
 		self.table_name = table_name
 
 		string = ["("]
@@ -40,9 +40,8 @@ class Database():
 		self.conn.commit()
 		print("Table created...\n")
 
-
 	def insert_row(self, *args, **kwargs):
-		"""This function will take values and add them into the rows of the table"""
+		"""Takes in a row of values and adds them into the table"""
 		string = ["("]
 		for x in range(len(args)):
 			if x == (len(args) - 1):
@@ -58,14 +57,14 @@ class Database():
 		print("Values added...\n")
 
 	def delete_rows(self):
-		"""This function will remove all rows from db"""
+		"""Removes all rows from table"""
 		command = f"DELETE FROM {self.table_name}"
 		self.c.execute(command)
 		self.conn.commit()
 		print("All rows removed...\n")
 
 	def fetch_table(self):
-		"""This function will retrieve all values from the table"""
+		"""Retrieves all values within the table"""
 		self.c.execute("SELECT * FROM " + self.table_name)
 		values = self.c.fetchall()
 		self.conn.commit()
@@ -73,7 +72,7 @@ class Database():
 		return values
 
 	def export_csv(self, file_name):
-		"""This function will export all data in db"""
+		"""Export table into a csv file with given name."""
 		self.c.execute("SELECT * FROM "+ self.table_name)
 		columns = [tuple[0] for tuple in self.c.description]
 		rows = self.fetch_table()
@@ -86,7 +85,7 @@ class Database():
 		print("DB exported to csv...\n")
 
 	def read_csv(self, file_name):
-		"""This function will print out whats in the csv"""
+		"""prints out all values in table"""
 		with open(f'{file_name}.csv', 'r') as f:
 			reader = csv.reader(f, delimiter="\t")
 			for row in reader:
@@ -94,6 +93,6 @@ class Database():
 					print(row)
 
 	def close(self):
-		"""This function will close the connection to the db"""
+		"""closes connection to db"""
 		self.conn.close()
 		print("Connection to db closed...\n")
