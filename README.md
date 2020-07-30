@@ -9,13 +9,13 @@ This simple, yet useful module allows the user to create a database for small sc
 
 ## Features:
 
-•    create_table - Takes in a table name and multiple column names then creates a table.
-•    insert_row - Takes in a row of values and adds them into the table.
-•    delete_rows - Removes all rows from table.
-•    fetch_table - Retrieves all values within the table.
-•    export_csv - Export table into a csv file with given table name.
-•    read_csv - Prints out all values in table with given table name.
-•    close - Closes connection to database.
++ create_table - Takes in a table name and multiple column names then creates a table.
++ insert_row - Takes in a row of values and adds them into the table.
++ delete_rows - Removes all rows from table.
++ fetch_table - Retrieves all values within the table.
++ export_csv - Export table into a csv file with given table name.
++ read_csv - Prints out all values in table with given table name.
++ close - Closes connection to database.
 
 
 ## How to install
