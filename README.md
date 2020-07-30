@@ -44,3 +44,8 @@ db.close()
 ## Feature request
 
 If there is a feature that you would like implemented, open an issue, and I will work on it.
+
+
+## Documentation
+
+https://dankdb.readthedocs.io/
